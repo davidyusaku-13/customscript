@@ -1,0 +1,21 @@
+#!/bin/bash
+
+sudo apt install php
+sudo apt install libapache2-mod-php php-mysql php-common
+sudo apt install apache2
+sudo systemctl start apache2
+sudo chmod 777 /var/www -R
+sudo apt install mysql-server
+sudo systemctl start mysql
+sudo apt install phpmyadmin
+
+sudo systemctl enable apache2
+sudo systemctl enable mysql
+
+sudo mysql_secure_installation
+echo READ FILES TO CONTINUE CONFIGURING MYSQL
+
+# sudo mysql
+# CREATE USER 'davidyusaku'@'localhost' IDENTIFIED BY 'DavidYusaku13';
+# GRANT ALL PRIVILEGES ON * . * TO 'davidyusaku'@'localhost';
+# FLUSH PRIVILEGES;
